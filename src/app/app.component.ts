@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hello';
+  // getFile(event:any)
+  // {
+  //   this.getFile=event.target
+  // }
 }

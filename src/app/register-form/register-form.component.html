@@ -1,0 +1,54 @@
+<p>register-form works!</p>
+
+<div class="cover">
+<mat-card class="mat-login">
+    
+    <mat-card-title>Register</mat-card-title>
+    <mat-card-content>
+        <form class="example-form" [formGroup]="registerform">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>FIRST NAME</mat-label>
+                <input formControlName="firstname" matInput placeholder="First Name here" >
+              </mat-form-field>
+              <small *ngIf="registerform.controls['firstname'].dirty && registerform.hasError('required','firstname')" class="text-danger">First Name is required</small>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>LAST NAME</mat-label>
+                <input formControlName="lastname" matInput placeholder="Last Name here" >
+              </mat-form-field>
+              <small *ngIf="registerform.controls['lastname'].dirty && registerform.hasError('required','lastname')" class="text-danger">Last Name is required</small>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>USER NAME</mat-label>
+                <input formControlName="username" matInput placeholder="Username here" >
+              </mat-form-field>
+              <small *ngIf="registerform.controls['username'].dirty && registerform.hasError('required','username')" class="text-danger">Username is required</small>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>PASSWORD</mat-label>
+              <input formControlName="password" matInput placeholder="Password here" type="password">
+            </mat-form-field>
+            <small *ngIf="registerform.controls['password'].dirty && registerform.hasError('required','password')" class="text-danger">password is required</small>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>CONFIRM PASSWORD</mat-label>
+                <input formControlName="repassword" matInput placeholder="Confirm password" type="password">
+              </mat-form-field>
+              <small *ngIf="registerform.controls['repassword'].dirty && registerform.hasError('required','repassword')" class="text-danger">Need confirm password</small>
+              <small *ngIf="registerform.controls['repassword'].dirty && registerform.hasError('notSame')" class="text-danger">Confirm password not match</small>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>EMAIL</mat-label>
+                <input formControlName="email" matInput placeholder="Email here" type="email">
+              </mat-form-field>
+              <small *ngIf="registerform.controls['email'].dirty && registerform.hasError('required','email')" class="text-danger">Email is required</small>
+          </form>
+    <div>
+        <!-- <button type="button" mat-raised-button color="primary">Submit</button>
+        <a mat-raised-button type="button" style="margin: 5px;"  color="accent"></a> -->
+        
+          <button type="button" (click)="OnRegister()" [disabled]="registerform.invalid" class="btn btn-primary btn-lg"
+            style="padding-left: 2.5rem; padding-right: 2.5rem;width:100%;">Register</button>
+          <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? 
+            <a routerLink="/logform"
+              class="link-danger">Login</a></p>
+        
+    </div>      
+    </mat-card-content>
+</mat-card>
+</div>

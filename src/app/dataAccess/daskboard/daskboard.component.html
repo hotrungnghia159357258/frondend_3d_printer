@@ -1,0 +1,18 @@
+<mat-toolbar >
+    
+    <span>Hello,{{name}}</span>
+    
+    <a mat-raised-button color="is-dark" (click)="logout()" >LOG OUT</a>
+    <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button> -->
+  </mat-toolbar>
+
+
+<p>daskboard works!</p>
+<ul *ngFor="let user of users">
+    <li>{{user.username}}</li>
+</ul>

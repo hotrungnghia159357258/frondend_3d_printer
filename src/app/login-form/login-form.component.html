@@ -1,0 +1,32 @@
+<p>login-form works!</p>
+<div class="cover">
+<mat-card class="mat-login">
+    
+    <mat-card-title>User Login</mat-card-title>
+    <mat-card-content>
+        <form class="example-form" [formGroup]="loginForm">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>USER NAME</mat-label>
+              <input formControlName="username" matInput placeholder="Username here" >
+            </mat-form-field>
+          <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')" class="text-danger">Username is required</small>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>PASSWORD</mat-label>
+              <input formControlName="password" matInput placeholder="Password here" type="password">
+            </mat-form-field>
+            <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" class="text-danger">Password is required</small>
+          </form>
+    <div>
+        <!-- <button type="button" mat-raised-button color="primary">Submit</button>
+        <a mat-raised-button type="button" style="margin: 5px;"  color="accent"></a> -->
+        
+          <button (click)="onLogin()" [disabled]="loginForm.invalid" type="submit"  class="btn btn-primary btn-lg"
+            style="padding-left: 2.5rem; padding-right: 2.5rem;width:100%;">Login</button>
+          <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? 
+            <a routerLink="/registerform"
+              class="link-danger">Register</a></p>
+        
+    </div>      
+    </mat-card-content>
+</mat-card>
+</div>
